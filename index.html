@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Net Art Surrealista</title>
+
+    <style>
+
+        /* Estilos CSS */
+
+        body {
+
+            font-family: Arial, sans-serif;
+
+            background-color: #f0f0f0;
+
+            text-align: center;
+
+        }
+
+        .container {
+
+            max-width: 800px;
+
+            margin: 0 auto;
+
+            padding: 20px;
+
+            background-color: #fff;
+
+            border-radius: 10px;
+
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+        }
+
+        .option {
+
+            display: inline-block;
+
+            margin: 10px;
+
+            cursor: pointer;
+
+        }
+
+        #canvas {
+
+            width: 100%;
+
+            height: auto;
+
+            max-width: 600px;
+
+            margin-top: 20px;
+
+            border: 2px solid #333;
+
+            border-radius: 10px;
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>¡Crea tu propia obra surrealista!</h1>
+
+        <h2>Selecciona un fondo:</h2>
+
+        <div id="background-options">
+
+            <div class="option" onclick="selectBackground('background1.jpg')">
+
+                <img src="background1.jpg" alt="Fondo 1">
+
+            </div>
+
+            <div class="option" onclick="selectBackground('background2.jpg')">
+
+                <img src="background2.jpg" alt="Fondo 2">
+
+            </div>
+
+            <!-- Añadir más opciones de fondos si es necesario -->
+
+        </div>
+
+        <h2>Selecciona y arrastra formas faciales:</h2>
+
+        <canvas id="canvas"></canvas>
+
+        <button onclick="finishArt()">Terminado</button>
+
+    </div>
+
+ 
+
+    <script>
+
+        // Función para seleccionar un fondo
+
+        function selectBackground(background) {
+
+            // Cambiar el fondo del canvas
+
+            document.getElementById('canvas').style.backgroundImage = "url('" + background + "')";
+
+        }
+
+ 
+
+        // Función para terminar la obra
+
+        function finishArt() {
+
+            // Obtener la imagen del canvas
+
+            var canvas = document.getElementById('canvas');
+
+            var dataURL = canvas.toDataURL();
+
+            // Mostrar la imagen final en un nuevo tablero o descargarla
+
+            window.open(dataURL);
+
+        }
+
+    </script>
+
+</body>
+
+</html>
